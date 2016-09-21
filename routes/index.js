@@ -10,10 +10,9 @@ const logger = require('winston');
  * Handlers
  */
 
+// TODO: split handlers out to separate files when things get more complicated
 const mainHandler = (req, res) => {
-  const rand = Math.floor(Math.random() * 100000) + 1;
-
-  logger.info(`Handling request on main endpoint. Lucky number is ${rand}`);
+  // TODO: populate relevant data here
 
   res.render('main.dust', {
     rand,
