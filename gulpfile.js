@@ -104,7 +104,7 @@ gulp.task('scripts', () => {
 
   return gulp.src(files)
     .pipe(gulpif(env === 'dev', sourcemaps.init()))
-    .pipe(concat('app.js'))
+    .pipe(concat('am.js'))
     .pipe(gulpif(env === 'dev', sourcemaps.write('maps')))
     .pipe(gulpif(env === 'prod', uglify(uglifyOptions)))
     .on('error', err => { console.log(err); })

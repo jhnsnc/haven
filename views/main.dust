@@ -9,7 +9,7 @@
   {! TODO: add content description here maybe <meta name="description" content=""> !}
   {! TODO: add other relevant meta tags here !}
 
-  <link rel="stylesheet" type="text/css" href="/css/app.css">
+  <link rel="stylesheet" type="text/css" href="/css/am.css">
 </head>
 <body>
 
@@ -56,6 +56,6 @@
   </footer>
 
   {! Scripts !}
-  <script src="/js/app.js"></script>
+  <script src="/js/am.js"></script>
 </body>
 </html>
