@@ -12,7 +12,48 @@
   <link rel="stylesheet" type="text/css" href="/css/app.css">
 </head>
 <body>
-  <h1>Hello World!</h1>
+
+  <div class="container">
+    <div id="slide-1" class="slide">
+      <p>{slide1Content|s}</p>
+    </div>
+
+    <div id="slide-2" class="slide">
+      <p>{slide2Content|s}</p>
+    </div>
+
+    <div id="slide-3" class="slide">
+      <p>{slide3Content|s}</p>
+    </div>
+
+    <div id="slide-4" class="slide">
+      <p>{slide4Content|s}</p>
+    </div>
+
+    <div id="slide-5" class="slide">
+      <p>{slide5Content|s}</p>
+    </div>
+
+    <div id="slide-6" class="slide">
+      <p>{slide6Content|s}</p>
+    </div>
+
+    <div id="slide-7" class="slide">
+      <p>{slide7Content|s}</p>
+    </div>
+  </div>
+
+  <footer>
+    <nav>
+      <a href="#slide-1">1</a>
+      <a href="#slide-2">2</a>
+      <a href="#slide-3">3</a>
+      <a href="#slide-4">4</a>
+      <a href="#slide-5">5</a>
+      <a href="#slide-6">6</a>
+      <a href="#slide-7">7</a>
+    </nav>
+  </footer>
 
   {! Scripts !}
   <script src="/js/app.js"></script>

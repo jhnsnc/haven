@@ -91,7 +91,10 @@ gulp.task('styles', () => {
 });
 
 gulp.task('scripts', () => {
-  const files = config.jsSrcDir + '/**/*.js';
+  const files = [
+    config.jsSrcDir + '/global.js',
+    config.jsSrcDir + '/**/*.js',
+  ];
 
   const uglifyOptions = {
     compress: {

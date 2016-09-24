@@ -1,0 +1,44 @@
+.slide {
+  position: relative;
+
+  p {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    width: 92%;
+    margin: 0;
+    transform: translate(-50%, -50%);
+
+    color: #FFFFFF;
+    font-family: "Candara", "Apple Gothic", Helvetica, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    line-height: 1.3;
+    // font-feature-settings: "liga" 0;
+    font-feature-settings: "liga" 0, "smcp" 1;
+    text-shadow: 1px 1px 5px rgba(#000000, 0.5);
+
+    @media screen and (min-width: $break-M) {
+      width: 86%;
+    }
+
+    @media screen and (min-width: $break-L) {
+      width: 80%;
+    }
+
+    span, em {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+    em {
+      font-size: 1.4em;
+      font-style: normal;
+    }
+  }
+}
+
+@for $i from 1 through 7 {
+  #slide-#{$i} {
+    background-color: hsl(random(360) - 1, 10% + random(90), 70% + random(20));
+  }
+}

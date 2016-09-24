@@ -1,5 +1,9 @@
-// Dependencies
-@import 'normalize.css/normalize';
+@import 'vars';
 
-// App Styles
 @import 'main';
+
+@import 'slides';
+
+@import 'slide-content';
+
+@import 'footer';
