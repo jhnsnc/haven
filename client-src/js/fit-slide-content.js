@@ -3,9 +3,23 @@
 function fitSlideContent(slide, targetHeight) {
   var slideContent = slide.querySelector('p');
 
+  // HACK - force refresh after resize
+  var slideContentPieces = [].slice.apply(slideContent.querySelectorAll('span,em'));
+  slideContentPieces.forEach(function(el) {
+    el.classList.remove('out');
+    el.classList.remove('in');
+  });
+
   var low = 0;
   var high = 0;
+  var iterations = 0;
   var getBestFontSize = function(fontSize) {
+    // early exit
+    iterations += 1;
+    if (iterations >= 20) {
+      return low;
+    }
+
     // check if font size fits
     slideContent.style.fontSize = fontSize + 'px';
     if (slideContent.getBoundingClientRect().height <= targetHeight) {
@@ -27,12 +41,19 @@ function fitSlideContent(slide, targetHeight) {
       }
     }
   }
-  slideContent.style.fontSize = getBestFontSize(50) + 'px';
+  slideContent.style.fontSize = getBestFontSize(64) + 'px';
+
+  // HACK - force refresh after resize
+  if(currentSlide === parseInt(slide.dataset.slide, 10)) {
+    slideContentPieces.forEach(fadeInContent);
+  }
 }
 
 function fitAllSlides() {
   slides.forEach(function(slide, idx) {
+    slide.classList.add('sizing');
     fitSlideContent(slide, window.innerHeight * (idx ? 0.7 : 0.4));
+    slide.classList.remove('sizing');
   });
 }
 

@@ -1,8 +1,13 @@
-// DOM elements
+/**
+ * DOM Elements
+ */
+
 var slides = [].slice.call(document.querySelectorAll('.slide'));
+var bg = document.querySelector('.bg');
 
-
-// Utilities
+/**
+ * Utilities
+ */
 
 // David Walsh debounce
 function debounce(func, wait, immediate) {

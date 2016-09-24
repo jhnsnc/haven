@@ -13,9 +13,9 @@ const tracery = require('tracery-grammar');
 
 // Special characters: ‘ ’ (squo) “ ” (dquo) – (en) — (em)
 const grammar = tracery.createGrammar({
-  'greeting_exclamation': ['Howdy','Greetings','Hello','👋','Namaste','Welcome','Hi','Good day, friend'],
+  'greeting_exclamation': ['Howdy','Greetings','Hello','🙏','Namaste','Welcome','Hi','Good day, friend'],
   'greeting_followup': [
-    'I’m glad you’re here', 'I was hoping you would come', 'Good to see you', // warm greeting
+    'I’m glad you’re here', 'I was hoping you would come to visit', 'Good to see you', 'I’ve been waiting for you', // warm greeting
     'You’re in the right place', 'Life has brought you here for a reason', 'I had a feeling I would be seeing you', // reassurance
     'Let’s make your day a little bit better', 'Let’s take some time for you', 'Let’s share a moment together', // purpose
   ],

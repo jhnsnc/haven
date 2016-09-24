@@ -11,34 +11,40 @@
 
   <link rel="stylesheet" type="text/css" href="/css/am.css">
 </head>
-<body>
+<body class="no-js">
+  <script>
+    document.body.classList.remove('no-js');
+    document.body.classList.add('js');
+  </script>
+
+  <div class="bg"></div>
 
   <div class="container">
-    <div id="slide-1" class="slide">
+    <div class="slide" data-slide="1">
       <p>{slide1Content|s}</p>
     </div>
 
-    <div id="slide-2" class="slide">
+    <div class="slide" data-slide="2">
       <p>{slide2Content|s}</p>
     </div>
 
-    <div id="slide-3" class="slide">
+    <div class="slide" data-slide="3">
       <p>{slide3Content|s}</p>
     </div>
 
-    <div id="slide-4" class="slide">
+    <div class="slide" data-slide="4">
       <p>{slide4Content|s}</p>
     </div>
 
-    <div id="slide-5" class="slide">
+    <div class="slide" data-slide="5">
       <p>{slide5Content|s}</p>
     </div>
 
-    <div id="slide-6" class="slide">
+    <div class="slide" data-slide="6">
       <p>{slide6Content|s}</p>
     </div>
 
-    <div id="slide-7" class="slide">
+    <div class="slide" data-slide="7">
       <p>{slide7Content|s}</p>
     </div>
   </div>
