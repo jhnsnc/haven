@@ -23,7 +23,7 @@ const logger = require('winston');
  */
 
 const app = express();
-app.set('port', 3000);
+app.set('port', process.env.PORT || 3000);
 
 app.set('views', __dirname + '/views');
 app.engine('dust', consolidate.dust);
