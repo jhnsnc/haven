@@ -1,0 +1,100 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0; }
+
+div {
+  padding: 0;
+  margin: 0; }
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 100%; }
+
+.slide {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  height: 100%; }
+
+.slide {
+  position: relative; }
+  .slide p {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    width: 92%;
+    margin: 0;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    color: #FFFFFF;
+    font-family: "Candara", "Apple Gothic", Helvetica, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    line-height: 1.3;
+    -webkit-font-feature-settings: "liga" 0, "smcp" 1;
+            font-feature-settings: "liga" 0, "smcp" 1;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); }
+    @media screen and (min-width: 680px) {
+      .slide p {
+        width: 86%; } }
+    @media screen and (min-width: 980px) {
+      .slide p {
+        width: 80%; } }
+    .slide p span, .slide p em {
+      display: block;
+      margin-bottom: 0.5em; }
+    .slide p em {
+      font-size: 1.4em;
+      font-style: normal; }
+
+#slide-1 {
+  background-color: #b36dfd; }
+
+#slide-2 {
+  background-color: #92d3d8; }
+
+#slide-3 {
+  background-color: #c2e0c3; }
+
+#slide-4 {
+  background-color: #e5f4cd; }
+
+#slide-5 {
+  background-color: #f4ddae; }
+
+#slide-6 {
+  background-color: #cdb6cd; }
+
+#slide-7 {
+  background-color: #d9adf0; }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.2); }
+  footer nav {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    height: 100%; }
+    footer nav a {
+      -webkit-box-flex: 0;
+          -ms-flex: 0 0 40px;
+              flex: 0 0 40px;
+      margin: 0 10px;
+      color: transparent;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 20px; }
+
+/*# sourceMappingURL=maps/app.css.map */
