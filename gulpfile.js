@@ -93,6 +93,7 @@ gulp.task('styles', () => {
 gulp.task('scripts', () => {
   const files = [
     config.jsSrcDir + '/global.js',
+    config.jsSrcDir + '/slide-colors.js',
     config.jsSrcDir + '/**/*.js',
   ];
 

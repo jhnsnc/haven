@@ -5,7 +5,14 @@
  */
 var currentSlide;
 var pendingTimeouts = [];
-var bgTween;
+var colorTween;
+
+var bgGradTop = document.getElementById('bg-grad-top');
+var bgGradBot = document.getElementById('bg-grad-bot');
+var starGrad1 = document.getElementById('star-grad-1');
+var starGrad2 = document.getElementById('star-grad-2');
+var starGrad3 = document.getElementById('star-grad-3');
+var starGrad4 = document.getElementById('star-grad-4');
 
 /**
  * Utility Functions
@@ -20,76 +27,33 @@ function fadeOutContent(el) {
   el.classList.remove('in');
 }
 
-function rgbToHexString(r, g, b) {
-  //magic: start with 1000000 then bitshift components onto it, then strip leading '1'
-  return '#' + ((1<<24)+(r<<16)+(g<<8)+b).toString(16).slice(1);
-}
-
-function hexStringToRgb(hexString) {
-  //magic: match hex pattern, break out components, and convert each to decimal
-  var componentStrings = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexString);
-  return {
-    r: parseInt(componentStrings[1], 16),
-    g: parseInt(componentStrings[2], 16),
-    b: parseInt(componentStrings[3], 16)
-  };
-}
-
-function changeBgColor(colorSetIdx) {
-  if (bgTween) {
-    window.cancelAnimationFrame(bgTween.id);
-  }
-
-  bgTween = {
-    iTop: hexStringToRgb(document.getElementById('bg-grad-top').getAttribute('stop-color')),
-    iBot: hexStringToRgb(document.getElementById('bg-grad-bot').getAttribute('stop-color')),
-    fTop: hexStringToRgb(slideColors[colorSetIdx].top),
-    fBot: hexStringToRgb(slideColors[colorSetIdx].bottom),
-    duration: 2000
-  };
-
-  function stepTween(ts) {
-    // timing
-    if (!bgTween.startTime) {
-      bgTween.startTime = ts;
-    }
-    var progress = Math.min((ts - bgTween.startTime) / bgTween.duration, 1.0);
-    progress = easeOutSine(progress);
-
-    // update
-    setBgColor(
-      rgbToHexString(
-        Math.floor(bgTween.iTop.r + (progress * (bgTween.fTop.r - bgTween.iTop.r))),
-        Math.floor(bgTween.iTop.g + (progress * (bgTween.fTop.g - bgTween.iTop.g))),
-        Math.floor(bgTween.iTop.b + (progress * (bgTween.fTop.b - bgTween.iTop.b)))
-      ),
-      rgbToHexString(
-        Math.floor(bgTween.iBot.r + (progress * (bgTween.fBot.r - bgTween.iBot.r))),
-        Math.floor(bgTween.iBot.g + (progress * (bgTween.fBot.g - bgTween.iBot.g))),
-        Math.floor(bgTween.iBot.b + (progress * (bgTween.fBot.b - bgTween.iBot.b)))
-      )
-    );
-
-    // continue or exit
-    if (progress < 1.0) {
-      bgTween.id = window.requestAnimationFrame(stepTween);
-    } else {
-      bgTween = null;
-    }
-  };
-
-  // start tween
-  bgTween.id = window.requestAnimationFrame(stepTween);
-}
-
 function setBgColor(topColor, botColor) {
-  document.getElementById('bg-grad-top').setAttribute('stop-color', topColor);
-  document.getElementById('bg-grad-bot').setAttribute('stop-color', botColor);
+  bgGradTop.setAttribute('stop-color', topColor);
+  bgGradBot.setAttribute('stop-color', botColor);
+}
+
+function setStarColor(starColor1, starColor2, starColor3, starColor4) {
+  starGrad1.setAttribute('stop-color', starColor1);
+  starGrad2.setAttribute('stop-color', starColor2);
+  starGrad3.setAttribute('stop-color', starColor3);
+  starGrad4.setAttribute('stop-color', starColor4);
 }
 
 /**
  * Functions
  */
+function nextSlide() {
+  if (currentSlide < 7) {
+    setSlide(currentSlide + 1);
+  }
+}
+
+function prevSlide() {
+  if (currentSlide > 1) {
+    setSlide(currentSlide - 1);
+  }
+}
+
 function setSlide(slideIdx) {
   // clean up pending transitions
   pendingTimeouts.forEach(window.clearTimeout);
@@ -111,16 +75,58 @@ function setSlide(slideIdx) {
   currentSlide = slideIdx;
 }
 
-function nextSlide() {
-  if (currentSlide < 7) {
-    setSlide(currentSlide + 1);
+function changeBgColor(colorSetIdx) {
+  if (colorTween) {
+    window.cancelAnimationFrame(colorTween.id);
   }
-}
 
-function prevSlide() {
-  if (currentSlide > 1) {
-    setSlide(currentSlide - 1);
-  }
+  var white = { r: 255, g: 255, b: 255 };
+  colorTween = {
+    iTop: hexStringToRgb(bgGradTop.getAttribute('stop-color')),
+    iBot: hexStringToRgb(bgGradBot.getAttribute('stop-color')),
+    fTop: hexStringToRgb(slideColors[colorSetIdx].top),
+    fBot: hexStringToRgb(slideColors[colorSetIdx].bottom),
+    iStarGrad1: hexStringToRgb(starGrad1.getAttribute('stop-color')),
+    iStarGrad2: hexStringToRgb(starGrad2.getAttribute('stop-color')),
+    iStarGrad3: hexStringToRgb(starGrad3.getAttribute('stop-color')),
+    iStarGrad4: hexStringToRgb(starGrad4.getAttribute('stop-color')),
+    fStarGrad1: mixComponentColors( hexStringToRgb(slideColors[colorSetIdx].stars), white, 0.90),
+    fStarGrad2: mixComponentColors( hexStringToRgb(slideColors[colorSetIdx].stars), white, 0.81),
+    fStarGrad3: mixComponentColors( hexStringToRgb(slideColors[colorSetIdx].stars), white, 0.54),
+    fStarGrad4: hexStringToRgb(slideColors[colorSetIdx].stars),
+    duration: 2000
+  };
+
+  function stepTween(ts) {
+    // timing
+    if (!colorTween.startTime) {
+      colorTween.startTime = ts;
+    }
+    var progress = Math.min((ts - colorTween.startTime) / colorTween.duration, 1.0);
+    progress = easeOutSine(progress);
+
+    // update
+    setBgColor(
+      rgbToHexString( mixComponentColors(colorTween.iTop, colorTween.fTop, progress) ),
+      rgbToHexString( mixComponentColors(colorTween.iBot, colorTween.fBot, progress) )
+    );
+    setStarColor(
+      rgbToHexString( mixComponentColors(colorTween.iStarGrad1, colorTween.fStarGrad1, progress) ),
+      rgbToHexString( mixComponentColors(colorTween.iStarGrad2, colorTween.fStarGrad2, progress) ),
+      rgbToHexString( mixComponentColors(colorTween.iStarGrad3, colorTween.fStarGrad3, progress) ),
+      rgbToHexString( mixComponentColors(colorTween.iStarGrad4, colorTween.fStarGrad4, progress) )
+    );
+
+    // continue or exit
+    if (progress < 1.0) {
+      colorTween.id = window.requestAnimationFrame(stepTween);
+    } else {
+      colorTween = null;
+    }
+  };
+
+  // start tween
+  colorTween.id = window.requestAnimationFrame(stepTween);
 }
 
 /**
