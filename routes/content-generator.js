@@ -23,7 +23,7 @@ const grammar = tracery.createGrammar({
   'slide_greeting': ['<em>#greeting_exclamation# </em><span>#greeting_followup#</span>'],
   'slide_breathing': ['<span>Focus on your breathing </span><span>Slowly in through the nose </span><span>and out through the mouth</span>'],
   'slide_stillness': ['<span>Turn your mind to the sensation of gravity tugging at your body </span><span>Feel how it presses you into your seat</span>'],
-  'slide_topic_intro': ['<span>Let’s focus on our body </span><span>Calm your mind and listen for your heartbeat</span>'],
+  'slide_topic_intro': ['<span>Let’s focus on your body </span><span>Calm your mind and listen for your heartbeat</span>'],
   'slide_topic_meditation_A': ['<span>Follow your pulse down your arms </span><span>Gently touch your fingertips together while you focus</span>'],
   'slide_topic_meditation_B': ['<span>Notice where your muscles feel tight and where they feel relaxed </span><span>Don’t try to change it–just observe</span>'],
   'slide_grounding': ['<span>Bring your thoughts back to your breathing </span><span>Place your feet down and press them firmly against the ground</span>'],

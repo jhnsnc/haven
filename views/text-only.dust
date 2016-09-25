@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Accessible Meditation</title>
+</head>
+<body>
+
+  <style>
+    p em, p span {
+      display: block;
+    }
+  </style>
+
+
+  <p>{slide1Content|s}</p>
+
+  <hr/>
+
+  <p>{slide2Content|s}</p>
+
+  <hr/>
+
+  <p>{slide3Content|s}</p>
+
+  <hr/>
+
+  <p>{slide4Content|s}</p>
+
+  <hr/>
+
+  <p>{slide5Content|s}</p>
+
+  <hr/>
+
+  <p>{slide6Content|s}</p>
+
+  <hr/>
+
+  <p>{slide7Content|s}</p>
+
+</body>
+</html>

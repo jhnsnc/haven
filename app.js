@@ -44,7 +44,7 @@ app.use(morgan('common')); // automatic HTTP logs
 const routes = require('./routes');
 
 app.get('/', routes.main);
-// TODO: add other routes here
+app.get('/text', routes.textOnly);
 
 /**
  * Global Error Handler
