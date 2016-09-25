@@ -52,7 +52,7 @@
         }
         &.out {
           transition: all 400ms $easeOutQuart;
-          transform: translateY(-0.25em);
+          transform: translateY(0);
         }
       }
     }

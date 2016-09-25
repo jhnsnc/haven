@@ -24,3 +24,8 @@ function debounce(func, wait, immediate) {
     if (callNow) func.apply(context, args);
   };
 };
+
+// simplified Penner easing
+function easeOutSine(progress) {
+  return Math.sin(progress * (Math.PI/2));
+}
