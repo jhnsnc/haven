@@ -55,13 +55,17 @@ function prevSlide() {
 }
 
 function setSlide(slideIdx) {
+  console.log('transitioning to slide '+slideIdx);
+
   // clean up pending transitions
   pendingTimeouts.forEach(window.clearTimeout);
 
   // hide current slide content
+  slides[currentSlide-1].classList.remove('active');
   [].slice.apply(slides[currentSlide-1].querySelectorAll('span,em')).forEach(fadeOutContent);
 
   // show new slide content
+  slides[slideIdx-1].classList.add('active');
   [].slice.apply(slides[slideIdx-1].querySelectorAll('span,em')).forEach(function(el, i) {
     pendingTimeouts.push(
       window.setTimeout(fadeInContent, 2500 * i + 1500, el)
@@ -90,9 +94,9 @@ function changeBgColor(colorSetIdx) {
     iStarGrad2: hexStringToRgb(starGrad2.getAttribute('stop-color')),
     iStarGrad3: hexStringToRgb(starGrad3.getAttribute('stop-color')),
     iStarGrad4: hexStringToRgb(starGrad4.getAttribute('stop-color')),
-    fStarGrad1: mixComponentColors( hexStringToRgb(slideColors[colorSetIdx].stars), white, 0.90),
-    fStarGrad2: mixComponentColors( hexStringToRgb(slideColors[colorSetIdx].stars), white, 0.81),
-    fStarGrad3: mixComponentColors( hexStringToRgb(slideColors[colorSetIdx].stars), white, 0.54),
+    fStarGrad1: mixComponentColors( hexStringToRgb(slideColors[colorSetIdx].stars), white, 0.50),
+    fStarGrad2: mixComponentColors( hexStringToRgb(slideColors[colorSetIdx].stars), white, 0.45),
+    fStarGrad3: mixComponentColors( hexStringToRgb(slideColors[colorSetIdx].stars), white, 0.30),
     fStarGrad4: hexStringToRgb(slideColors[colorSetIdx].stars),
     duration: 2000
   };
@@ -132,7 +136,13 @@ function changeBgColor(colorSetIdx) {
 /**
  * Make it so, number one
  */
-document.body.addEventListener('click', nextSlide);
+//TODO: add listeners for footer links
+navLinks.forEach(function(navLink) {
+  navLink.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    setSlide(parseInt(this.dataset.slide,10));
+  });
+});
 
 currentSlide = 1;
 setSlide(currentSlide);

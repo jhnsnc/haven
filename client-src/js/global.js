@@ -4,6 +4,7 @@
 
 var slides = [].slice.call(document.querySelectorAll('.slide'));
 var bg = document.querySelector('.bg');
+var navLinks = [].slice.call(document.querySelectorAll('footer nav a'));
 
 /**
  * Utilities
