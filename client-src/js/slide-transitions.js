@@ -55,14 +55,20 @@ function prevSlide() {
 }
 
 function setSlide(slideIdx) {
+  if (currentSlide === slideIdx) {
+    return; // this slide was already active, no need to change
+  }
+
   console.log('transitioning to slide '+slideIdx);
 
   // clean up pending transitions
   pendingTimeouts.forEach(window.clearTimeout);
 
   // hide current slide content
-  slides[currentSlide-1].classList.remove('active');
-  [].slice.apply(slides[currentSlide-1].querySelectorAll('span,em')).forEach(fadeOutContent);
+  if (currentSlide) {
+    slides[currentSlide-1].classList.remove('active');
+    [].slice.apply(slides[currentSlide-1].querySelectorAll('span,em')).forEach(fadeOutContent);
+  }
 
   // show new slide content
   slides[slideIdx-1].classList.add('active');
@@ -70,6 +76,15 @@ function setSlide(slideIdx) {
     pendingTimeouts.push(
       window.setTimeout(fadeInContent, 2500 * i + 1500, el)
     );
+  });
+
+  // update nav links
+  navLinks.forEach(function(navLink) {
+    if (parseInt(navLink.dataset.slide,10) === slideIdx) {
+      navLink.classList.add('active');
+    } else {
+      navLink.classList.remove('active');
+    }
   });
 
   // update background
@@ -133,16 +148,49 @@ function changeBgColor(colorSetIdx) {
   colorTween.id = window.requestAnimationFrame(stepTween);
 }
 
+function handleNavigationLinkClick(evt) {
+  evt.preventDefault();
+  setSlide(parseInt(this.dataset.slide,10));
+}
+
+function handleNavigationKeypress(evt) {
+  switch(evt.key || evt.keyCode) {
+    // previous slide
+    case 8:  case 'Backspace':
+    case 37: case 'ArrowLeft':
+    case 38: case 'ArrowUp':
+    case 33: case 'PageUp':
+      prevSlide();
+      break;
+    // next slide
+    case 13: case 'Enter':
+    case 32: case ' ': // spacebar
+    case 40: case 'ArrowDown':
+    case 39: case 'ArrowRight':
+    case 34: case 'PageDown':
+      nextSlide();
+      break;
+    // jump to first slide
+    case 36: case 'Home':
+      setSlide(1);
+      break;
+    // jump to last slide
+    case 35: case 'End':
+      setSlide(slides.length);
+      break;
+  }
+}
+
 /**
  * Make it so, number one
  */
-//TODO: add listeners for footer links
 navLinks.forEach(function(navLink) {
-  navLink.addEventListener('click', function(evt) {
-    evt.preventDefault();
-    setSlide(parseInt(this.dataset.slide,10));
-  });
+  navLink.addEventListener('click', handleNavigationLinkClick);
 });
+document.querySelector('.btn-prev-slide').addEventListener('click', prevSlide);
+document.querySelector('.btn-next-slide').addEventListener('click', nextSlide);
+window.addEventListener('keydown', handleNavigationKeypress);
 
-currentSlide = 1;
-setSlide(currentSlide);
+setBgColor('#121318','#121318'); //start with a black screen
+
+setSlide(1);

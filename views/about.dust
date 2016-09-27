@@ -64,7 +64,7 @@
         <span>
           <a href="{twitterIntentLink}" target="_blank">
             <img height="40" src="/img/twitter-logo.svg" alt="Twitter username: "/>
-            Tweet
+            tweet
           </a>
         </span>
       </p>
