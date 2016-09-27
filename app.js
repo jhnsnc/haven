@@ -46,6 +46,8 @@ const routes = require('./routes');
 app.get('/', routes.main);
 app.get('/text', routes.textOnly);
 
+app.get('/about', routes.about);
+
 /**
  * Global Error Handler
  */

@@ -29,6 +29,7 @@ const destDir = 'public';
 const config = {
   cssSrcDir: srcDir + '/scss',
   jsSrcDir: srcDir + '/js',
+  imgSrcDir: srcDir + '/img',
 };
 
 //////////////////////////////////////////////////
@@ -38,10 +39,11 @@ const config = {
 gulp.task('watch', ['build'], () => {
   gulp.watch(config.cssSrcDir + '/**/*.*', ['styles']);
   gulp.watch(config.jsSrcDir + '/**/*.*', ['scripts']);
+  gulp.watch(config.imgSrcDir + '/**/*.*', ['images']);
 });
 
 gulp.task('build', (cb) => {
-  runSequence('clean', ['styles', 'scripts'], cb);
+  runSequence('clean', ['styles', 'scripts', 'images'], cb);
 });
 gulp.task('deploy', (cb) => {
   env = 'prod';
@@ -111,3 +113,11 @@ gulp.task('scripts', () => {
     .on('error', err => { console.log(err); })
     .pipe(gulp.dest(destDir + '/js'));
 });
+
+gulp.task('images', () => {
+  const files = config.imgSrcDir + '/**/*.*';
+
+  return gulp.src(files)
+    .pipe(gulp.dest(destDir + '/img'));
+});
+

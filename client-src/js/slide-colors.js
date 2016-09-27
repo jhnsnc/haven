@@ -135,3 +135,7 @@ var slideColors = [
     stars: '#c4cbf5'
   }
 ];
+
+if (typeof module !== 'undefined') {
+  module.exports = slideColors;
+}

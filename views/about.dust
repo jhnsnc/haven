@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Accessible Meditation - About</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {! TODO: add content description here maybe <meta name="description" content=""> !}
+  {! TODO: add other relevant meta tags here !}
+
+  <link rel="stylesheet" type="text/css" href="/css/am.css">
+</head>
+<body class="no-js">
+
+  <div class="container">
+
+    <svg class="bg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 9 9" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop id="bg-grad-top" offset="0%" stop-color="{defaultGradientTop}" stop-opacity="1.0"></stop>
+          <stop id="bg-grad-bot" offset="100%" stop-color="{defaultGradientBot}" stop-opacity="1.0"></stop>
+        </linearGradient>
+      </defs>
+      <rect id="bg-rect" x="0" y="0" width="9" height="9" fill="url(#bg-grad)"></rect>
+    </svg>
+
+    <div class="slide">
+      <p>
+        <span>This is a simple web app for helping you get started meditation</span>
+      </p>
+    </div>
+
+    <div class="slide">
+      <p>
+        <span>It&rsquo;s not a meditation master class and it wasn&rsquo;t made by an experienced yogi</span>
+        <span>But if you&rsquo;re like most people, you could use a little more clarity and focus in your life</span>
+        <span>and maybe this website can help you with that</span>
+      </p>
+    </div>
+
+    <div class="slide">
+      <p>
+        <span>This was made by Chris Johnson</span>
+        <span>
+          <a href="https://twitter.com/jhnsnc" target="_blank">
+            <img height="40" src="/img/twitter-logo.svg" alt="Twitter username: "/>
+            jhnsnc
+          </a>
+        </span>
+        <span>
+          <a href="https://github.com/jhnsnc" target="_blank">
+            <img height="40" src="/img/github-logo.svg" alt="Github username: "/>
+            </svg>
+            jhnsnc
+          </a>
+        </span>
+      </p>
+    </div>
+
+    <div class="slide">
+      <p>
+        <span>If you found this helpful, pass it along</span>
+        <span>
+          <a href="{twitterIntentLink}" target="_blank">
+            <img height="40" src="/img/twitter-logo.svg" alt="Twitter username: "/>
+            Tweet
+          </a>
+        </span>
+      </p>
+    </div>
+
+  </div>
+
+  <footer>
+    <svg class="footer-decoration" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 32">
+      <defs>
+        <filter id="dropShadow">
+          <feGaussianBlur stdDeviation="1"/>
+          <feOffset dy="1"/>
+          <feComponentTransfer result="shadow">
+            <feFuncR type="linear" slope="0"/>
+            <feFuncG type="linear" slope="0"/>
+            <feFuncB type="linear" slope="0"/>
+            <feFuncA type="linear" slope="0.4"/>
+          </feComponentTransfer>
+          <feComposite in="SourceGraphic" in2="shadow" operator="over"/>
+        </filter>
+      </defs>
+      <g filter="url(#dropShadow)">
+        <path d="m181.6,27.6c-1,-0.2 -4,-0.6 -8.2,-0.6l-9999,0 0,-1 9999,0c3.8,0 7.3,0.6 8.6,1.1 0.5,0.2 1.1,0.5 1.6,0.8 -0.4,0 -1.4,-0.2 -2,-0.3z"/>
+        <path d="m218.4,27.6c1,-0.2 4,-0.6 8.2,-0.6l9999,0 0,-1 -9999,0c-3.8,0 -7.3,0.6 -8.6,1.1 -0.5,0.2 -1.1,0.5 -1.6,0.8 0.4,0 1.5,-0.2 2,-0.3z"/>
+        <path d="m200,2.5c4.1,2.7 5.7,9.3 4.8,12.6 -0.2,0.6 -0.4,1 -0.4,1 0,0 0.3,-0.3 0.9,-0.8 2.2,-2 6.5,-3.3 9.3,-3.3 0.2,1.7 -0.6,5.8 -2,7.6 -0.2,0.3 -0.5,0.7 -0.5,0.7 0.4,-0.1 0.5,-0.1 1,-0.1 1.9,-0.1 5.2,0.6 6.5,1.5 -0.4,1.1 -2.2,3.6 -5.9,5.3 -2.3,1 -4.6,1.5 -6.5,1.7 -3.1,0.4 -3.7,1.2 -3.7,1.2 0,0 1.1,-0.3 3.7,-0.5 1.9,-0.1 5.2,-0.8 6.9,-1.6 4.4,-2.1 5.8,-4.4 6.8,-6.5 -3,-1.4 -5.8,-1.8 -7.8,-1.6 2,-2.3 2.8,-6.9 2.4,-8.7 -2.7,0 -6.8,0.6 -10.1,3.4 0.9,-3.9 -0.9,-9.8 -5.1,-13.4L199.8,0.7 199.4,1c-4.2,3.6 -5.9,9.5 -5.1,13.4 -3.2,-2.8 -7.4,-3.4 -10.1,-3.4 -0.3,1.9 0.4,6.4 2.4,8.7 -2,-0.2 -4.7,0.2 -7.8,1.6 1,2.1 2.4,4.4 6.8,6.5 1.7,0.8 5.1,1.5 6.9,1.6 2.6,0.2 3.7,0.5 3.7,0.5 0,0 -0.6,-0.8 -3.7,-1.2 -1.9,-0.3 -4.2,-0.7 -6.5,-1.7 -3.7,-1.6 -5.5,-4.1 -5.9,-5.3 1.3,-0.9 4.6,-1.5 6.5,-1.5 0.5,0 0.7,0 1,0.1 0,0 -0.3,-0.4 -0.5,-0.7 -1.4,-1.8 -2.2,-6 -2.1,-7.7 2.8,0 7.1,1.4 9.3,3.4 0.6,0.5 0.9,0.8 0.9,0.8 0,0 -0.2,-0.4 -0.4,-1 -0.9,-3.2 0.7,-9.9 4.8,-12.6l0.2,-0.1z"/>
+        <circle cx="200" cy="30.5" r="1"/>
+      </g>
+    </svg>
+  </footer>
+
+  {! Scripts !}
+  {! TODO: about page scripts !}
+</body>
+</html>

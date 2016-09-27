@@ -12,34 +12,39 @@
   <link rel="stylesheet" type="text/css" href="/css/am.css">
 </head>
 <body class="no-js">
-  <script>
-    document.body.classList.remove('no-js');
-    document.body.classList.add('js');
-  </script>
 
-  <svg class="bg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 9 9" preserveAspectRatio="none">
-    <defs>
-      <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop id="bg-grad-top" offset="0%" stop-color="#000000" stop-opacity="1.0"></stop>
-        <stop id="bg-grad-bot" offset="100%" stop-color="#000000" stop-opacity="1.0"></stop>
-      </linearGradient>
-    </defs>
-    <rect id="bg-rect" x="0" y="0" width="9" height="9" fill="url(#bg-grad)"></rect>
-  </svg>
+  <div class="spotify-embed">
+    {! <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3Ameditationrelaxclub%3Aplaylist%3A5n6KR28MQyC9jzSSUEwptL" width="250" height="80" frameborder="0" allowtransparency="true"></iframe> !}
+    {! <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3Ajonahbergher%3Aplaylist%3A4kJbqwOQzNlyy4lOJ2jYXP" width="250" height="80" frameborder="0" allowtransparency="true"></iframe> !}
 
-  <svg class="starfield" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-    <defs>
-      <radialGradient id="starGradient" fx="50%" fy="50%" cx="50%" cy="50%" r="50%">
-        <stop id="star-grad-1" offset="0%" stop-color="#ffffff" stop-opacity="1" />
-        <stop id="star-grad-2" offset="30%" stop-color="#eeeeee" stop-opacity="0.9" />
-        <stop id="star-grad-3" offset="50%" stop-color="#cccccc" stop-opacity="0.6" />
-        <stop id="star-grad-4" offset="100%" stop-color="#888888" stop-opacity="0" />
-      </radialGradient>
-      <circle id="star" cx="200" cy="135" r="4" fill="url(#starGradient)" />
-    </defs>
-  </svg>
+    {! Trackset !}
+    {! <iframe src="https://embed.spotify.com/?uri=spotify:trackset:TRACKSET_TITLE:TRACK_ID_1,TRACK_ID_2,TRACK_ID_3,ETC,ETC" width="250" height="80" frameborder="0" allowtransparency="true"></iframe> !}
+  </div>
 
   <div class="container">
+
+    <svg class="bg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 9 9" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop id="bg-grad-top" offset="0%" stop-color="{defaultGradientTop}" stop-opacity="1.0"></stop>
+          <stop id="bg-grad-bot" offset="100%" stop-color="{defaultGradientBot}" stop-opacity="1.0"></stop>
+        </linearGradient>
+      </defs>
+      <rect id="bg-rect" x="0" y="0" width="9" height="9" fill="url(#bg-grad)"></rect>
+    </svg>
+
+    <svg class="starfield" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="starGradient" fx="50%" fy="50%" cx="50%" cy="50%" r="50%">
+          <stop id="star-grad-1" offset="0%" stop-color="#ffffff" stop-opacity="1" />
+          <stop id="star-grad-2" offset="30%" stop-color="#eeeeee" stop-opacity="0.9" />
+          <stop id="star-grad-3" offset="50%" stop-color="#cccccc" stop-opacity="0.6" />
+          <stop id="star-grad-4" offset="100%" stop-color="#888888" stop-opacity="0" />
+        </radialGradient>
+        <circle id="star" cx="200" cy="135" r="4" fill="url(#starGradient)" />
+      </defs>
+    </svg>
+
     <div id="slide-1" class="slide" data-slide="1">
       <p>{slide1Content|s}</p>
     </div>
@@ -67,6 +72,7 @@
     <div id="slide-7" class="slide" data-slide="7">
       <p>{slide7Content|s}</p>
     </div>
+
   </div>
 
   <footer>

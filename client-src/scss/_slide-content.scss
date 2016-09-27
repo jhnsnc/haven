@@ -1,23 +1,30 @@
 .slide {
   z-index: 1;
   position: relative;
-  background: #b0ccdd; // FOOBAR
 
   p {
-    position: absolute;
-    left: 50%;
-    top: 45%;
-    width: 92%;
-    margin: 0;
-    transform: translate(-50%, -50%);
+    position: relative; //no-js -- overwritten when js is on
+    padding: 2em 0; //no-js -- overwritten when js is on
+    margin: 0 auto; //no-js -- overwritten when js is on
 
-    color: #FFFFFF;
+    color: #ffffff;
     font-family: "Candara", "Apple Gothic", Helvetica, sans-serif;
     font-size: 50px;
     text-align: center;
     line-height: 1.1;
-    font-feature-settings: "liga" 0, "smcp" 1;
+    font-feature-settings: "liga" 0;
     text-shadow: 1px 1px 5px rgba(#000000, 0.5);
+
+    &:after { //no-js -- overwritten when js is on
+      content: " ";
+      position: absolute;
+      left: 30%;
+      bottom: 0;
+      width: 40%;
+      height: 2px;
+      background: #ffffff;
+      box-shadow: 1px 1px 5px rgba(#000000, 0.5);
+    }
 
     @media screen and (min-width: $break-M) {
       width: 81%;
@@ -34,6 +41,28 @@
     em {
       font-size: 1.4em;
       font-style: normal;
+      font-feature-settings: "liga" 0, "smcp" 1;
+    }
+    a {
+      text-decoration: none;
+      color: #ffffff;
+      &:hover, &:focus {
+        text-decoration: underline;
+      }
+
+      img {
+        margin: 0 10px -5px;
+      }
+    }
+  }
+
+  &:last-child {
+    p {
+      padding-bottom: 4em;
+
+      &:after {
+        display: none;
+      }
     }
   }
 }
@@ -41,6 +70,18 @@
 .js {
   .slide {
     p {
+      position: absolute;
+      left: 50%;
+      top: 45%;
+      width: 92%;
+      padding: 0;
+      margin: 0;
+      transform: translate(-50%, -50%);
+
+      &:after {
+        display: none;
+      }
+
       span, em {
         position: relative;
         transform: translateY(0.75em);

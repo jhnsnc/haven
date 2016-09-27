@@ -62,3 +62,10 @@ function hexStringToRgb(hexString) {
     b: parseInt(componentStrings[3], 16)
   };
 }
+
+/**
+ * JS Flag
+ */
+
+document.body.classList.remove('no-js');
+document.body.classList.add('js');
