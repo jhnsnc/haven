@@ -2,6 +2,7 @@
 
 function fitSlideContent(slide, targetHeight) {
   var slideContent = slide.querySelector('p');
+  var slideButtons = [].slice.apply(slide.querySelectorAll('.btn-begin, .btn-more-info'));
 
   // HACK - force refresh after resize
   var slideContentPieces = [].slice.apply(slideContent.querySelectorAll('span,em'));
@@ -22,6 +23,9 @@ function fitSlideContent(slide, targetHeight) {
 
     // check if font size fits
     slideContent.style.fontSize = fontSize + 'px';
+    slideButtons.forEach(function(btn) {
+      btn.style.fontSize = fontSize + 'px';
+    })
     if (slideContent.getBoundingClientRect().height <= targetHeight) {
       low = fontSize;
     } else {
@@ -41,7 +45,12 @@ function fitSlideContent(slide, targetHeight) {
       }
     }
   }
-  slideContent.style.fontSize = getBestFontSize(64) + 'px';
+
+  var bestFontSize = getBestFontSize(64);
+  slideContent.style.fontSize = bestFontSize + 'px';
+  slideButtons.forEach(function(btn) {
+    btn.style.fontSize = bestFontSize + 'px';
+  });
 
   // HACK - force refresh after resize
   if(currentSlide === parseInt(slide.dataset.slide, 10)) {
@@ -52,7 +61,7 @@ function fitSlideContent(slide, targetHeight) {
 function fitAllSlides() {
   slides.forEach(function(slide, idx) {
     slide.classList.add('sizing');
-    fitSlideContent(slide, window.innerHeight * (idx ? 0.7 : 0.4));
+    fitSlideContent(slide, window.innerHeight * (idx ? 0.7 : 0.6));
     slide.classList.remove('sizing');
   });
 }

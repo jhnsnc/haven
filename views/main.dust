@@ -46,7 +46,12 @@
     </svg>
 
     <div id="slide-1" class="slide" data-slide="1">
-      <p>{slide1Content|s}</p>
+      <p>{slide1Content|s}
+        <span class="intro-prompt">
+          <button class="btn-more-info">What&rsquo;s this?</button>
+          <button class="btn-begin">Let&rsquo;s begin</button>
+        </span>
+      </p>
     </div>
 
     <div id="slide-2" class="slide" data-slide="2">

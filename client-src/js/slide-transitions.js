@@ -190,6 +190,12 @@ navLinks.forEach(function(navLink) {
 document.querySelector('.btn-prev-slide').addEventListener('click', prevSlide);
 document.querySelector('.btn-next-slide').addEventListener('click', nextSlide);
 window.addEventListener('keydown', handleNavigationKeypress);
+document.querySelector('.btn-begin').addEventListener('click', nextSlide);
+
+document.querySelector('.btn-more-info').addEventListener('click', function() {
+  window.location.pathname = '/about';
+});
+
 
 setBgColor('#121318','#121318'); //start with a black screen
 
