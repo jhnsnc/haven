@@ -6,6 +6,7 @@
 
 const logger = require('winston');
 const contentGenerator = require('./content-generator');
+const spotifyTrackList = require('./spotify-track-list');
 const slideColors = require('../client-src/js/slide-colors');
 
 /**
@@ -14,6 +15,19 @@ const slideColors = require('../client-src/js/slide-colors');
 
 const mainHandler = (req, res) => {
   const colors = getRandomSlideColors();
+
+  let selectedSpotifyTracks = [];
+
+  let i;
+  for (i = 0; i < 25; i += 1) { // random track indices
+    selectedSpotifyTracks.push(Math.floor(Math.random() * spotifyTrackList.length));
+  }
+  const uniqueTracks = {};
+  selectedSpotifyTracks = selectedSpotifyTracks.filter((trackIndex) => {
+    return uniqueTracks.hasOwnProperty(trackIndex) ? false : (uniqueTracks[trackIndex] = true);
+  });
+
+  selectedSpotifyTracks = selectedSpotifyTracks.map(trackIndex => spotifyTrackList[trackIndex]);
 
   res.render('main.dust', {
     slide1Content: contentGenerator.getSlideContent(1),
@@ -25,6 +39,8 @@ const mainHandler = (req, res) => {
     slide7Content: contentGenerator.getSlideContent(7),
     defaultGradientTop: colors.top,
     defaultGradientBot: colors.bottom,
+    spotifyTrackListTitle: encodeURIComponent('Random Meditation Tracks'),
+    selectedSpotifyTracks: selectedSpotifyTracks.join(','),
   })
 };
 

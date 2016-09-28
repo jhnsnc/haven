@@ -1,5 +1,23 @@
 .spotify-embed {
+  z-index: 100;
+  cursor: pointer;
   position: absolute;
   left: 0;
   top: 0;
+
+  &:hover, &:focus {
+    svg {
+      opacity: 0.8;
+    }
+  }
+
+  svg {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    // fill: #ffffff;
+    fill: #1ed760;
+    opacity: 0.4;
+    transition: opacity 200ms;
+  }
 }
