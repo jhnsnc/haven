@@ -43,7 +43,7 @@ function setStarColor(starColor1, starColor2, starColor3, starColor4) {
  * Functions
  */
 function nextSlide() {
-  if (currentSlide < 7) {
+  if (currentSlide < slides.length) {
     setSlide(currentSlide + 1);
   }
 }

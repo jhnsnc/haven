@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Accessible Meditation</title>
+  <title>Haven - Meditation</title>
 </head>
 <body>
 
@@ -35,10 +35,6 @@
   <hr/>
 
   <p>{slide6Content|s}</p>
-
-  <hr/>
-
-  <p>{slide7Content|s}</p>
 
 </body>
 </html>

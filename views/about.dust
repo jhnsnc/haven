@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Accessible Meditation - About</title>
+  <title>Haven - About</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {! TODO: add content description here maybe <meta name="description" content=""> !}
@@ -27,7 +27,7 @@
 
     <div class="slide">
       <p>
-        <span>This is a simple web app for helping you get started meditation</span>
+        <span>Haven is a simple web app for helping you get started meditation</span>
       </p>
     </div>
 
@@ -35,13 +35,13 @@
       <p>
         <span>It&rsquo;s not a meditation master class and it wasn&rsquo;t made by an experienced yogi</span>
         <span>But if you&rsquo;re like most people, you could use a little more clarity and focus in your life</span>
-        <span>and maybe this website can help you with that</span>
+        <span>and maybe Haven can help guide you there</span>
       </p>
     </div>
 
     <div class="slide">
       <p>
-        <span>This was made by Chris Johnson</span>
+        <span>This was made by Chris&nbsp;Johnson</span>
         <span>
           <a href="https://twitter.com/jhnsnc" target="_blank">
             <img height="40" src="/img/twitter-logo.svg" alt="Twitter username: "/>
@@ -94,6 +94,9 @@
         <circle cx="200" cy="30.5" r="1"/>
       </g>
     </svg>
+    <h1>
+      <a href="\">Haven</a>
+    </h1>
   </footer>
 
   {! Scripts !}

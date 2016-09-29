@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Accessible Meditation</title>
+  <title>Haven - Meditation</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {! TODO: add content description here maybe <meta name="description" content=""> !}
@@ -13,7 +13,9 @@
 </head>
 <body class="no-js">
 
-  <div class="spotify-embed" data-spotify-embed="https://embed.spotify.com/?uri=spotify:trackset:{spotifyTrackListTitle}:{selectedSpotifyTracks}">
+  <div class="spotify-embed"
+    data-spotify-trackset-embed="https://embed.spotify.com/?uri=spotify:trackset:{spotifyTrackSetTitle}:{selectedSpotifyTracks}"
+    data-spotify-playlist-embed="https://embed.spotify.com/?uri=spotify:{selectedSpotifyPlaylist}">
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 168 168">
       <defs>
         <filter id="thingstuff">
@@ -89,10 +91,6 @@
       <p>{slide6Content|s}</p>
     </div>
 
-    <div id="slide-7" class="slide" data-slide="7">
-      <p>{slide7Content|s}</p>
-    </div>
-
   </div>
 
   <footer>
@@ -143,25 +141,23 @@
       </a>
       <a href="#slide-4" class="nav-link" data-slide="4">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-15 -15 30 30" filter="url(#dropShadow)">
-          <path d="M5,8.7C -2,2.6 -2,2.6 -10,0 -2,-2.6 -2,-2.6 5,-8.7 3,0 3,0 5,8.7Z"/>
-          <path d="M10,0C 2,2.6 2,2.6 -5,8.7 -3,0 -3,0 -5,-8.7 2,-2.6 2,-2.6 10,0Z"/>
-        </svg>
-      </a>
-      <a href="#slide-5" class="nav-link" data-slide="5">
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-15 -15 30 30" filter="url(#dropShadow)">
           <path d="M8.7,5C 0,3 0,3 -8.7,5 -2.6,-2 -2.6,-2 0,-10 2.6,-2 2.6,-2 8.7,5Z"/>
           <path d="M5,8.7C -2,2.6 -2,2.6 -10,0 -2,-2.6 -2,-2.6 5,-8.7 3,0 3,0 5,8.7Z"/>
           <path d="M0,10C -2.6,2 -2.6,2 -8.7,-5 0,-3 0,-3 8.7,-5 2.6,2 2.6,2 0,10Z"/>
           <path d="M10,0C 2,2.6 2,2.6 -5,8.7 -3,0 -3,0 -5,-8.7 2,-2.6 2,-2.6 10,0Z"/>
         </svg>
       </a>
-      <a href="#slide-6" class="nav-link" data-slide="6">
+      <a href="#slide-5" class="nav-link" data-slide="5">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-15 -15 30 30" filter="url(#dropShadow)">
+          <path d="M5,8.7C -2,2.6 -2,2.6 -10,0 -2,-2.6 -2,-2.6 5,-8.7 3,0 3,0 5,8.7Z"/>
+          <path d="M10,0C 2,2.6 2,2.6 -5,8.7 -3,0 -3,0 -5,-8.7 2,-2.6 2,-2.6 10,0Z"/>
+        </svg>
+        {! <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-15 -15 30 30" filter="url(#dropShadow)">
           <path d="M0,10C -2.6,2 -2.6,2 -8.7,-5 0,-3 0,-3 8.7,-5 2.6,2 2.6,2 0,10Z"/>
           <circle cx="0" cy="0" r="8"/>
-        </svg>
+        </svg> !}
       </a>
-      <a href="#slide-7" class="nav-link" data-slide="7">
+      <a href="#slide-6" class="nav-link" data-slide="6">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-15 -15 30 30" filter="url(#dropShadow)">
           <path d="M0,-9.5C -6.1,-4.2 -6.1,-4.2 -8.7,5.5 0,7.5 0,7.5 8.7,5.5 6.1,-4.2 6.1,-4.7 0,-9.5Z"/>
           <path d="M0,-9.5L -8.7,5.5 8.7,5.5Z"/>
@@ -174,6 +170,7 @@
         </svg>
       </a>
     </nav>
+    <h1>Haven</h1>
   </footer>
 
   {! Scripts !}

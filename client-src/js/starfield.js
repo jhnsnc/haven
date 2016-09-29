@@ -6,7 +6,7 @@ var setupStarfield = function() {
   var originalStar = document.getElementById('star');
 
   var stars = [];
-  for (i = 0; i < 100; i += 1) {
+  for (i = 0; i < 150; i += 1) {
     star = originalStar.cloneNode(true);
     star.removeAttribute('id');
     starfield.appendChild(star);
@@ -64,7 +64,7 @@ var setupStarfield = function() {
         star.tween.id = window.requestAnimationFrame(stepStarTween);
       } else {
         star.tween = null;
-        tweenStar(star); // restart
+        setTimeout(tweenStar, 1 + Math.floor(Math.random() * 1300), star); // restart
       }
     }
 
@@ -81,4 +81,6 @@ var setupStarfield = function() {
 /**
  * Make it so, number one
  */
-setTimeout(setupStarfield, 100);
+if (!isMobile()) {
+  setupStarfield();
+}
