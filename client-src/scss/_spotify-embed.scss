@@ -2,8 +2,9 @@
   z-index: 100;
   cursor: pointer;
   position: absolute;
-  left: 0;
+  right: 0;
   top: 0;
+  display: none; // hide for no-js
 
   &:hover, &:focus {
     svg {
@@ -15,9 +16,15 @@
     width: 40px;
     height: 40px;
     padding: 10px;
-    // fill: #ffffff;
-    fill: #1ed760;
+    fill: #ffffff;
+    // fill: #1ed760;
     opacity: 0.4;
     transition: opacity 200ms;
+  }
+}
+
+.js {
+  .spotify-embed {
+    display: block;
   }
 }
