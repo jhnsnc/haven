@@ -5,11 +5,7 @@ var insertSpotifyEmbed = function() {
 
   // create iframe element
   var iframe = document.createElement('iframe');
-  if (!isMobile()) {
-    iframe.src = spotifyEmbed.dataset.tracks;
-  } else {
-    iframe.src = spotifyEmbed.dataset.playlist;
-  }
+  iframe.src = 'https://embed.spotify.com/?uri=spotify:' + (isMobile() ? spotifyEmbed.dataset.playlist : spotifyEmbed.dataset.tracks);
   iframe.setAttribute('width', 250);
   iframe.setAttribute('height', 80);
   iframe.setAttribute('frameborder', 0);
