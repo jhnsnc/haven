@@ -61,16 +61,15 @@
     }
 
     .b-b, .b-m-i { // btn-begin / btn-more-info
-      cursor: pointer;
       padding: 0.6em 1em;
-      margin: 1.0em auto 0.5em;
+      margin: 0.5em auto 0;
 
       color: #ffffff;
       font-family: $font-stack;
       font-size: 36px;
-      text-align: center;
       line-height: 1.1;
       font-feature-settings: "liga" 0, "smcp" 1;
+      text-decoration: none;
       text-shadow: 1px 1px 5px rgba(#000, 0.5);
 
       background: rgba(#000, 0.3);
@@ -80,8 +79,12 @@
 
       &:hover, &:focus {
         background: rgba(#000, 0.6);
-        outline: none;
+        text-decoration: none;
       }
+    }
+
+    .b-m-i { // btn-more-info
+      display: inline-block;
     }
 
     .b-b { // btn-begin
@@ -126,7 +129,7 @@
         }
       }
       .b-b { // btn-begin
-        display: block;
+        display: inline-block;
       }
     }
     &.sz { // sizing

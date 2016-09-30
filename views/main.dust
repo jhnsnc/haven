@@ -65,8 +65,9 @@
     <div id="s-1" class="s" data-s="1">
       <p>{slide1Content|s}
         <span>
-          <button class="b-m-i">What&rsquo;s this?</button>
-          <button class="b-b">Meditate</button>
+          <a href="/about" class="b-m-i">What&rsquo;s this?</a>
+        <br/>
+          <a href="javascript:void(0)" class="b-b">Meditate</a>
         </span>
       </p>
     </div>
