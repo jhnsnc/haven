@@ -66,12 +66,12 @@ function setSlide(slideIdx) {
 
   // hide current slide content
   if (currentSlide) {
-    slides[currentSlide-1].classList.remove('active');
+    slides[currentSlide-1].classList.remove('a');
     [].slice.apply(slides[currentSlide-1].querySelectorAll('span,em')).forEach(fadeOutContent);
   }
 
   // show new slide content
-  slides[slideIdx-1].classList.add('active');
+  slides[slideIdx-1].classList.add('a');
   [].slice.apply(slides[slideIdx-1].querySelectorAll('span,em')).forEach(function(el, i) {
     pendingTimeouts.push(
       window.setTimeout(fadeInContent, 2500 * i + 1500, el)
@@ -80,26 +80,26 @@ function setSlide(slideIdx) {
 
   // update nav links
   navLinks.forEach(function(navLink) {
-    var linkIndex = parseInt(navLink.dataset.slide,10);
+    var linkIndex = parseInt(navLink.dataset.s,10);
     // set link active if corresponds to active slide
-    // active-prev if immediately before active slide (of 2 before active slide if active slide is the last one)
-    // active-next if immediately after active slide (of 2 after active slide if active slide is the first one)
+    // a-p if immediately before active slide (of 2 before active slide if active slide is the last one)
+    // a-n if immediately after active slide (of 2 after active slide if active slide is the first one)
     if (linkIndex === slideIdx) {
-      navLink.classList.add('active');
-      navLink.classList.remove('active-prev');
-      navLink.classList.remove('active-next');
+      navLink.classList.add('a');
+      navLink.classList.remove('a-p');
+      navLink.classList.remove('a-n');
     } else if (linkIndex + 1 === slideIdx || (linkIndex + 2 === slideIdx && slideIdx === slides.length)) {
-      navLink.classList.remove('active');
-      navLink.classList.add('active-prev');
-      navLink.classList.remove('active-next');
+      navLink.classList.remove('a');
+      navLink.classList.add('a-p');
+      navLink.classList.remove('a-n');
     } else if (linkIndex === slideIdx + 1 || (linkIndex === slideIdx + 2 && slideIdx === 1)) {
-      navLink.classList.remove('active');
-      navLink.classList.remove('active-prev');
-      navLink.classList.add('active-next');
+      navLink.classList.remove('a');
+      navLink.classList.remove('a-p');
+      navLink.classList.add('a-n');
     } else {
-      navLink.classList.remove('active');
-      navLink.classList.remove('active-prev');
-      navLink.classList.remove('active-next');
+      navLink.classList.remove('a');
+      navLink.classList.remove('a-p');
+      navLink.classList.remove('a-n');
     }
   });
 
@@ -166,7 +166,7 @@ function changeBgColor(colorSetIdx) {
 
 function handleNavigationLinkClick(evt) {
   evt.preventDefault();
-  setSlide(parseInt(this.dataset.slide,10));
+  setSlide(parseInt(this.dataset.s,10));
 }
 
 function handleNavigationKeypress(evt) {
@@ -203,12 +203,12 @@ function handleNavigationKeypress(evt) {
 navLinks.forEach(function(navLink) {
   navLink.addEventListener('click', handleNavigationLinkClick);
 });
-document.querySelector('.btn-prev-slide').addEventListener('click', prevSlide);
-document.querySelector('.btn-next-slide').addEventListener('click', nextSlide);
+document.querySelector('.b-p-s').addEventListener('click', prevSlide);
+document.querySelector('.b-n-s').addEventListener('click', nextSlide);
 window.addEventListener('keydown', handleNavigationKeypress);
-document.querySelector('.btn-begin').addEventListener('click', nextSlide);
+document.querySelector('.b-b').addEventListener('click', nextSlide);
 
-document.querySelector('.btn-more-info').addEventListener('click', function() {
+document.querySelector('.b-m-i').addEventListener('click', function() {
   window.location.pathname = '/about';
 });
 

@@ -1,4 +1,4 @@
-.spotify-embed {
+.s-e { // spotify-embed
   z-index: 100;
   cursor: pointer;
   position: absolute;
@@ -24,7 +24,7 @@
 }
 
 .js {
-  .spotify-embed {
+  .s-e { // spotify-embed
     display: block;
   }
 }

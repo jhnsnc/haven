@@ -4,7 +4,7 @@ function fitSlideContent(slide, targetHeight) {
   console.log('fitting slide content in ' + targetHeight + ' pixels', slide);
 
   var slideContent = slide.querySelector('p');
-  var slideButtons = [].slice.apply(slide.querySelectorAll('.btn-begin, .btn-more-info'));
+  var slideButtons = [].slice.apply(slide.querySelectorAll('.b-b, .b-m-i'));
 
   // HACK - force refresh after resize
   var slideContentPieces = [].slice.apply(slideContent.querySelectorAll('span,em'));
@@ -55,16 +55,16 @@ function fitSlideContent(slide, targetHeight) {
   });
 
   // HACK - force refresh after resize
-  if(currentSlide === parseInt(slide.dataset.slide, 10)) {
+  if(currentSlide === parseInt(slide.dataset.s, 10)) {
     slideContentPieces.forEach(fadeInContent);
   }
 }
 
 function fitAllSlides() {
   slides.forEach(function(slide, idx) {
-    slide.classList.add('sizing');
+    slide.classList.add('sz'); // sizing
     fitSlideContent(slide, window.innerHeight - 150); // hard-coding 150 as slide top/bottom padding (10 + 140)
-    slide.classList.remove('sizing');
+    slide.classList.remove('sz');
   });
 }
 

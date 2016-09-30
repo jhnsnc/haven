@@ -1,7 +1,7 @@
 var setupStarfield = function() {
   var i, star;
 
-  var starfield = document.querySelector('.starfield');
+  var starfield = document.querySelector('.sf');
 
   var originalStar = document.getElementById('star');
 

@@ -2,9 +2,9 @@
  * DOM Elements
  */
 
-var slides = [].slice.call(document.querySelectorAll('.slide'));
+var slides = [].slice.call(document.querySelectorAll('.s'));
 var bg = document.querySelector('.bg');
-var navLinks = [].slice.call(document.querySelectorAll('footer nav a.nav-link'));
+var navLinks = [].slice.call(document.querySelectorAll('nav a.n-l')); // nav-links
 
 /**
  * Utilities

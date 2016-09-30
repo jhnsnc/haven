@@ -19,7 +19,7 @@ footer {
     background: linear-gradient(rgba(#000, 0.0), rgba(#000, 0.1), rgba(#000, 0.3), rgba(#000, 0.6));
   }
 
-  .footer-decoration {
+  .f-d { // footer-decoration
     pointer-events: none;
     z-index: 1;
     position: absolute;
@@ -51,7 +51,7 @@ footer {
 
       transition: background 2000ms, box-shadow 200ms;
 
-      &.active {
+      &.a { // active
         background: rgba(#000, 0.4);
         box-shadow: inset 0 0 15px rgba(#000, 0.4);
       }
@@ -67,7 +67,7 @@ footer {
         fill: transparent;
       }
 
-      &.btn-prev-slide, &.btn-next-slide {
+      &.b-p-s, &.b-n-s {
         display: none; //no-js -- overwritten when js is on
 
         svg {
@@ -78,7 +78,7 @@ footer {
       @media screen and (max-width: $break-S) {
         display: none;
 
-        &.active, &.active-prev, &.active-next, &.btn-prev-slide, &.btn-next-slide {
+        &.a, &.a-p, &.a-n, &.b-p-s, &.b-n-s { // active, prev/next buttons
           display: block;
           flex-grow: 1;
         }
@@ -91,7 +91,7 @@ footer {
   footer {
     nav {
       a {
-        &.btn-prev-slide, &.btn-next-slide {
+        &.b-p-s, &.b-n-s {
           display: block; //no-js -- overwritten when js is on
         }
       }

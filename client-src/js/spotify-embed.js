@@ -1,4 +1,4 @@
-var spotifyEmbed = document.querySelector('.spotify-embed');
+var spotifyEmbed = document.querySelector('.s-e');
 
 var insertSpotifyEmbed = function() {
   spotifyEmbed.querySelector('svg').remove();

@@ -1,4 +1,4 @@
-.slide {
+.s { // slide
   z-index: 1;
   position: relative;
 
@@ -60,7 +60,7 @@
       }
     }
 
-    .btn-begin, .btn-more-info {
+    .b-b, .b-m-i { // btn-begin / btn-more-info
       cursor: pointer;
       padding: 0.6em 1em;
       margin: 1.0em auto 0.5em;
@@ -84,7 +84,7 @@
       }
     }
 
-    .btn-begin {
+    .b-b { // btn-begin
       display: none;
     }
   }
@@ -101,7 +101,7 @@
 }
 
 .js {
-  .slide {
+  .s {
     p {
       padding: 0;
 
@@ -125,11 +125,11 @@
           transform: translateY(0);
         }
       }
-      .btn-begin {
+      .b-b { // btn-begin
         display: block;
       }
     }
-    &.sizing {
+    &.sz { // sizing
       p {
         span, em {
           opacity: 0.1;

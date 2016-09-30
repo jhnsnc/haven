@@ -1,0 +1,9 @@
+.autoplay-indicator {
+  display: none; //no-js -- overwritten when js is on
+}
+
+.js {
+  .autoplay-indicator {
+    display: block;
+  }
+}
