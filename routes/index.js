@@ -59,7 +59,7 @@ const aboutHandler = (req, res) => {
   const colors = getRandomSlideColors();
 
   const tweetText = 'I tried meditating today.\nMaybe this site can help you try it too.';
-  const thisAppUrl = 'http://another-am-test.azurewebsites.net/';
+  const thisAppUrl = 'https://haven-10kapart2016.azurewebsites.net/';
   const twitterIntentLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}&url=${encodeURIComponent(thisAppUrl)}&hashtags=mindfulness`;
 
   res.render('about.dust', {

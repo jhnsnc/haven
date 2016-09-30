@@ -51,14 +51,13 @@ const grammar = tracery.createGrammar({
 
   // tranistions
   'transition_begin': ['we begin meditating by', 'begin your meditation with'],
-  'transition_then': ['now', 'next,', 'soon'],
+  'transition_then': ['now', 'next,'],
 
   // verbs
   'verb_continue': ['continue', 'keep'],
   'verb_contemplate': ['accept', 'contemplate', 'think about', 'focus on'],
   'verb_follow': ['follow', 'trace'],
   'verb_travels': ['travels', 'echoes', 'flows'],
-  'verb_relax': [],
   'verb_surface': ['bubble up', 'surface', 'arise'],
   'verb_permit': ['allow', 'permit'],
   'verb_retain': ['retain', 'maintain', 'hold onto', 'keep', 'react with'],
