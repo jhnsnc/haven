@@ -5,6 +5,7 @@
 .js {
   .w { // wrapper
     height: 100%;
+    overflow: hidden;
   }
   .s { // slide
     position: absolute;
