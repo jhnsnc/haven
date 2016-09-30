@@ -111,6 +111,8 @@ function setSlide(slideIdx) {
 }
 
 function changeBgColor(colorSetIdx) {
+  console.log('changing to slide color ' + colorSetIdx);
+
   if (colorTween) {
     window.cancelAnimationFrame(colorTween.id);
   }
@@ -131,6 +133,8 @@ function changeBgColor(colorSetIdx) {
     fStarGrad4: hexStringToRgb(slideColors[colorSetIdx].stars),
     duration: 2000
   };
+
+  console.log(colorTween);
 
   function stepTween(ts) {
     // timing

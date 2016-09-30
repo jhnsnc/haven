@@ -55,11 +55,21 @@ function mixComponentColors(colorA, colorB, mixPerc) {
 
 function hexStringToRgb(hexString) {
   // magic: match hex pattern, break out components, and convert each to decimal
-  var componentStrings = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexString);
+  var componentStrings;
+  componentStrings = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexString);
+  if (componentStrings && componentStrings.length >= 4) {
+    return {
+      r: parseInt(componentStrings[1], 16),
+      g: parseInt(componentStrings[2], 16),
+      b: parseInt(componentStrings[3], 16)
+    };
+  }
+
+  componentStrings = /rgb[a]*\((\d{1,3}),(\d{1,3}),(\d{1,3})\)/gi.exec(hexString.replace(/\s*/gi,''));
   return {
-    r: parseInt(componentStrings[1], 16),
-    g: parseInt(componentStrings[2], 16),
-    b: parseInt(componentStrings[3], 16)
+    r: parseInt(componentStrings[1], 10),
+    g: parseInt(componentStrings[2], 10),
+    b: parseInt(componentStrings[3], 10),
   };
 }
 

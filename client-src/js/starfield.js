@@ -6,7 +6,7 @@ var setupStarfield = function() {
   var originalStar = document.getElementById('star');
 
   var stars = [];
-  for (i = 0; i < 150; i += 1) {
+  for (i = 0; i < 50; i += 1) {
     star = originalStar.cloneNode(true);
     star.removeAttribute('id');
     starfield.appendChild(star);
