@@ -1,6 +1,8 @@
 // Resizes text for each slide to fit tight inside the container
 
 function fitSlideContent(slide, targetHeight) {
+  console.log('fitting slide content in ' + targetHeight + ' pixels', slide);
+
   var slideContent = slide.querySelector('p');
   var slideButtons = [].slice.apply(slide.querySelectorAll('.btn-begin, .btn-more-info'));
 
@@ -61,7 +63,7 @@ function fitSlideContent(slide, targetHeight) {
 function fitAllSlides() {
   slides.forEach(function(slide, idx) {
     slide.classList.add('sizing');
-    fitSlideContent(slide, window.innerHeight * (idx ? 0.7 : 0.6));
+    fitSlideContent(slide, window.innerHeight - 200); // hard-coding 200 as slide top/bottom padding (60 + 140)
     slide.classList.remove('sizing');
   });
 }

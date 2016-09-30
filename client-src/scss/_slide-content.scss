@@ -8,8 +8,8 @@
     margin: 0 auto; //no-js -- overwritten when js is on
 
     color: #ffffff;
-    font-family: "Candara", "Apple Gothic", Helvetica, sans-serif;
-    font-size: 50px;
+    font-family: $font-stack;
+    font-size: 36px;
     text-align: center;
     line-height: 1.1;
     font-feature-settings: "liga" 0;
@@ -24,6 +24,10 @@
       height: 2px;
       background: #ffffff;
       box-shadow: 1px 1px 5px rgba(#000, 0.5);
+    }
+
+    @media screen and (max-width: $break-S) {
+      text-align: left;
     }
 
     @media screen and (min-width: $break-M) {
@@ -62,7 +66,7 @@
       margin: 1.5em auto 0.5em;
 
       color: #ffffff;
-      font-family: "Candara", "Apple Gothic", Helvetica, sans-serif;
+      font-family: $font-stack;
       font-size: 50px;
       text-align: center;
       line-height: 1.1;

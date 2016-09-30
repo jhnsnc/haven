@@ -25,49 +25,45 @@
       <rect id="bg-rect" x="0" y="0" width="9" height="9" fill="url(#bg-grad)"></rect>
     </svg>
 
-    <div class="slide">
-      <p>
-        <span>Haven is a simple web app for helping you get started meditation</span>
-      </p>
+    <div class="about-content">
+      <p>Haven is a simple web app for helping you get started with meditation.</p>
+      <p>If that sounds strange or foreign to you, don&rsquo;t worry! Meditation is simply about taking time for yourself and giving yourself permission to be still, calm, and thoughtfully focused.</p>
+      <p>Of course, meditation <em>can</em> involve mantras, yoga poses, and so on, but this app focuses on simpler, more accessible meditation. If you&rsquo;re like most people, you could use a little more clarity and focus in your life, so take 5 minutes and let Haven guide you through a simple meditation session. Then you can consider if meditating might be a helpful habit for you to pick up.</p>
     </div>
 
-    <div class="slide">
-      <p>
-        <span>It&rsquo;s not a meditation master class and it wasn&rsquo;t made by an experienced yogi</span>
-        <span>But if you&rsquo;re like most people, you could use a little more clarity and focus in your life</span>
-        <span>and maybe Haven can help guide you there</span>
-      </p>
+    <div class="about-content center">
+      <p><strong>Haven was made by Chris&nbsp;Johnson.</strong></p>
+      <div class="about-links">
+        <a href="https://twitter.com/jhnsnc" target="_blank">
+          <img height="40" src="/img/twitter-logo.svg" alt="Twitter username: "/>
+          jhnsnc
+        </a>
+        <a href="https://github.com/jhnsnc" target="_blank">
+          <img height="40" src="/img/github-logo.svg" alt="Github username: "/>
+          </svg>
+          jhnsnc
+        </a>
+      </div>
     </div>
 
-    <div class="slide">
-      <p>
-        <span>This was made by Chris&nbsp;Johnson</span>
-        <span>
-          <a href="https://twitter.com/jhnsnc" target="_blank">
-            <img height="40" src="/img/twitter-logo.svg" alt="Twitter username: "/>
-            jhnsnc
-          </a>
-        </span>
-        <span>
-          <a href="https://github.com/jhnsnc" target="_blank">
-            <img height="40" src="/img/github-logo.svg" alt="Github username: "/>
-            </svg>
-            jhnsnc
-          </a>
-        </span>
-      </p>
+    <div class="about-content center">
+      <p><strong>If you found this helpful, pass it along!</strong></p>
+      <div class="about-links">
+        <a href="{twitterIntentLink}" target="_blank">
+          <img height="40" src="/img/twitter-logo.svg" alt="Twitter username: "/>
+          Tweet
+        </a>
+      </div>
     </div>
 
-    <div class="slide">
-      <p>
-        <span>If you found this helpful, pass it along</span>
-        <span>
-          <a href="{twitterIntentLink}" target="_blank">
-            <img height="40" src="/img/twitter-logo.svg" alt="Twitter username: "/>
-            tweet
-          </a>
-        </span>
-      </p>
+    <div class="about-content center">
+      <p><strong>If you have ideas on how to improve Haven, open an issue on Github.</strong></p>
+      <div class="about-links">
+        <a href="https://github.com/jhnsnc/haven/issues" target="_blank">
+          <img height="40" src="/img/twitter-logo.svg" alt="Twitter username: "/>
+          Github issues
+        </a>
+      </div>
     </div>
 
   </div>

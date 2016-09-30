@@ -80,10 +80,26 @@ function setSlide(slideIdx) {
 
   // update nav links
   navLinks.forEach(function(navLink) {
-    if (parseInt(navLink.dataset.slide,10) === slideIdx) {
+    var linkIndex = parseInt(navLink.dataset.slide,10);
+    // set link active if corresponds to active slide
+    // active-prev if immediately before active slide (of 2 before active slide if active slide is the last one)
+    // active-next if immediately after active slide (of 2 after active slide if active slide is the first one)
+    if (linkIndex === slideIdx) {
       navLink.classList.add('active');
+      navLink.classList.remove('active-prev');
+      navLink.classList.remove('active-next');
+    } else if (linkIndex + 1 === slideIdx || (linkIndex + 2 === slideIdx && slideIdx === slides.length)) {
+      navLink.classList.remove('active');
+      navLink.classList.add('active-prev');
+      navLink.classList.remove('active-next');
+    } else if (linkIndex === slideIdx + 1 || (linkIndex === slideIdx + 2 && slideIdx === 1)) {
+      navLink.classList.remove('active');
+      navLink.classList.remove('active-prev');
+      navLink.classList.add('active-next');
     } else {
       navLink.classList.remove('active');
+      navLink.classList.remove('active-prev');
+      navLink.classList.remove('active-next');
     }
   });
 
