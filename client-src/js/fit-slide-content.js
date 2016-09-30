@@ -63,7 +63,7 @@ function fitSlideContent(slide, targetHeight) {
 function fitAllSlides() {
   slides.forEach(function(slide, idx) {
     slide.classList.add('sizing');
-    fitSlideContent(slide, window.innerHeight - 200); // hard-coding 200 as slide top/bottom padding (60 + 140)
+    fitSlideContent(slide, window.innerHeight - 150); // hard-coding 150 as slide top/bottom padding (10 + 140)
     slide.classList.remove('sizing');
   });
 }

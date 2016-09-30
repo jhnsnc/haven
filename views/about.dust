@@ -32,7 +32,7 @@
     </div>
 
     <div class="about-content center">
-      <p><strong>Haven was made by Chris&nbsp;Johnson.</strong></p>
+      <p class="tight"><strong>Haven was made by Chris&nbsp;Johnson.</strong></p>
       <div class="about-links">
         <a href="https://twitter.com/jhnsnc" target="_blank">
           <img height="40" src="/img/twitter-logo.svg" alt="Twitter username: "/>
@@ -47,20 +47,20 @@
     </div>
 
     <div class="about-content center">
-      <p><strong>If you found this helpful, pass it along!</strong></p>
+      <p class="tight"><strong>If you found this helpful, pass it along!</strong></p>
       <div class="about-links">
         <a href="{twitterIntentLink}" target="_blank">
-          <img height="40" src="/img/twitter-logo.svg" alt="Twitter username: "/>
+          <img height="40" src="/img/twitter-logo.svg" alt=""/>
           Tweet
         </a>
       </div>
     </div>
 
     <div class="about-content center">
-      <p><strong>If you have ideas on how to improve Haven, open an issue on Github.</strong></p>
+      <p class="tight"><strong>If you have ideas on how to improve Haven, open an issue on Github.</strong></p>
       <div class="about-links">
         <a href="https://github.com/jhnsnc/haven/issues" target="_blank">
-          <img height="40" src="/img/twitter-logo.svg" alt="Twitter username: "/>
+          <img height="40" src="/img/github-logo.svg" alt=""/>
           Github issues
         </a>
       </div>

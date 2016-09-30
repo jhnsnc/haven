@@ -46,14 +46,18 @@
   }
 
   p {
-    margin: 0 0 28px;
+    margin: 0 0 2em;
 
     color: #ffffff;
     font-family: $font-stack;
-    font-size: 28px;
-    line-height: 1.4;
+    font-size: 26px;
+    line-height: 1.5;
     font-feature-settings: "liga" 0;
     text-shadow: 1px 1px 5px rgba(#000, 0.5);
+
+    &.tight {
+      margin-bottom: 1em;
+    }
   }
 }
 
@@ -62,12 +66,13 @@
   margin-bottom: 20px;
 
   a {
-    padding: 10px 20px;
+    position: relative;
+    padding: 10px 20px 10px (20px + 50px);
     vertical-align: middle;
 
     color: #ffffff;
     font-family: $font-stack;
-    font-size: 28px;
+    font-size: 26px;
     font-feature-settings: "liga" 0;
     text-shadow: 1px 1px 5px rgba(#000, 0.5);
     text-decoration: none;
@@ -80,7 +85,11 @@
     }
 
     img {
-      margin: 0 10px -10px 0;
+      position: absolute;
+      left: 20px;
+      top: 6px;
+      width: 40px;
+      height: 40px;
     }
   }
 }

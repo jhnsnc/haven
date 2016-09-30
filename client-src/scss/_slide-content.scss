@@ -3,9 +3,10 @@
   position: relative;
 
   p {
-    position: relative; //no-js -- overwritten when js is on
+    position: relative;
+    width: 92%;
     padding: 2em 0; //no-js -- overwritten when js is on
-    margin: 0 auto; //no-js -- overwritten when js is on
+    margin: 0 auto;
 
     color: #ffffff;
     font-family: $font-stack;
@@ -61,13 +62,12 @@
 
     .btn-begin, .btn-more-info {
       cursor: pointer;
-      display: none;
       padding: 0.6em 1em;
-      margin: 1.5em auto 0.5em;
+      margin: 1.0em auto 0.5em;
 
       color: #ffffff;
       font-family: $font-stack;
-      font-size: 50px;
+      font-size: 36px;
       text-align: center;
       line-height: 1.1;
       font-feature-settings: "liga" 0, "smcp" 1;
@@ -82,6 +82,10 @@
         background: rgba(#000, 0.6);
         outline: none;
       }
+    }
+
+    .btn-begin {
+      display: none;
     }
   }
 
@@ -99,18 +103,13 @@
 .js {
   .slide {
     p {
-      position: absolute;
-      left: 50%;
-      top: 45%;
-      width: 92%;
       padding: 0;
-      margin: 0;
-      transform: translate(-50%, -50%);
 
       &:after {
         display: none;
       }
 
+      // text transitions
       span, em {
         position: relative;
         transform: translateY(0.75em);
@@ -126,7 +125,7 @@
           transform: translateY(0);
         }
       }
-      .btn-begin, .btn-more-info {
+      .btn-begin {
         display: block;
       }
     }

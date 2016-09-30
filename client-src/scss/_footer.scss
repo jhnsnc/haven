@@ -68,6 +68,8 @@ footer {
       }
 
       &.btn-prev-slide, &.btn-next-slide {
+        display: none; //no-js -- overwritten when js is on
+
         svg {
           fill: #fff;
         }
@@ -79,6 +81,18 @@ footer {
         &.active, &.active-prev, &.active-next, &.btn-prev-slide, &.btn-next-slide {
           display: block;
           flex-grow: 1;
+        }
+      }
+    }
+  }
+}
+
+.js {
+  footer {
+    nav {
+      a {
+        &.btn-prev-slide, &.btn-next-slide {
+          display: block; //no-js -- overwritten when js is on
         }
       }
     }
