@@ -14,8 +14,8 @@
 <body class="no-js">
 
   <div class="s-e"
-    data-spotify-trackset-embed="https://embed.spotify.com/?uri=spotify:trackset:{spotifyTrackSetTitle}:{selectedSpotifyTracks}"
-    data-spotify-playlist-embed="https://embed.spotify.com/?uri=spotify:{selectedSpotifyPlaylist}">
+    data-tracks="https://embed.spotify.com/?uri=spotify:trackset:{spotifyTrackSetTitle}:{selectedSpotifyTracks}"
+    data-playlist="https://embed.spotify.com/?uri=spotify:{selectedSpotifyPlaylist}">
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 168 168">
       <defs>
         <filter id="shad">
@@ -152,10 +152,6 @@
           <path d="M5,8.7C -2,2.6 -2,2.6 -10,0 -2,-2.6 -2,-2.6 5,-8.7 3,0 3,0 5,8.7Z"/>
           <path d="M10,0C 2,2.6 2,2.6 -5,8.7 -3,0 -3,0 -5,-8.7 2,-2.6 2,-2.6 10,0Z"/>
         </svg>
-        {! <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-15 -15 30 30" filter="url(#dropShadow)">
-          <path d="M0,10C -2.6,2 -2.6,2 -8.7,-5 0,-3 0,-3 8.7,-5 2.6,2 2.6,2 0,10Z"/>
-          <circle cx="0" cy="0" r="8"/>
-        </svg> !}
       </a>
       <a href="#s-6" class="n-l" data-s="6">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-15 -15 30 30" filter="url(#dropShadow)">
@@ -170,7 +166,6 @@
         </svg>
       </a>
     </nav>
-    <h1>Haven</h1>
   </footer>
 
   {! Scripts !}
