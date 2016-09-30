@@ -19,7 +19,7 @@ const mainHandler = (req, res) => {
   let selectedSpotifyTracks = [];
 
   let i;
-  for (i = 0; i < 10; i += 1) { // random track indices
+  for (i = 0; i < 5; i += 1) { // random track indices
     selectedSpotifyTracks.push(Math.floor(Math.random() * spotifyTrackList.tracks.length));
   }
   const uniqueTracks = {};
